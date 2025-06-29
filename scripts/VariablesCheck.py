@@ -17,6 +17,7 @@ class Variables():
             if "DélaisVérification" in line: DELAIS = self.FindContent(line)
             if "FormatRéponse" in line: FORMAT = self.FindContent(line)
             if "RaccourciToutArrêter" in line: SHORTCUT = self.FindContent(line)
+            if "IaChoisi" in line: AI = self.FindContent(line)
 
         if '' in BANWORDS: BANWORDS.remove('')
         if ' ' in BANWORDS: BANWORDS.remove(' ')
