@@ -16,8 +16,10 @@ class OllamaAI():
                     "content": Message
                 }
             ],
-            #"temperature": 0.7,   # Niveau de créativité (entre 0 et 1)
-            #"max_tokens": 500     # Limite du nombre de tokens dans la réponse
+            "temperature": 0.7,   # Niveau de créativité (entre 0 et 1)
+            "max_tokens": 500,     # Limite du nombre de tokens dans la réponse
+            "response_field": "response",
+            "Stream": True
         }
         return self.payload
 
@@ -29,7 +31,9 @@ class OllamaAI():
             )
 
         if response.status_code == 200:
-            print(response.json())
+            data = response.json()
+            print(f"Réponse du modèle : {data.get('response', '')}")
+            print(data)
             #print(response.json()['choices'][0]['message']['content'])
         else:
             print(f"Erreur : {response.status_code}")
