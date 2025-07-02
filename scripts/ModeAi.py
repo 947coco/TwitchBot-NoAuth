@@ -5,7 +5,7 @@ class OllamaAI():
     def __init__(self, AiName):
         self.url = "http://localhost:11434/api/generate"  # Adresse de l'API d'Ollama par défaut
         self.headers = {"Content-Type": "application/json"}
-        self.AI = AiName
+        self.AI = AiName    
 
     def CreatePayload(self, Message):
         self.payload = {
@@ -29,5 +29,5 @@ class OllamaAI():
         else:
             print(f"Erreur : {response.status_code}")
 
-IA = OllamaAI("deepseek-r1")
+IA = OllamaAI("deepseek-r1:14b")
 IA.SendQuestion("Bonjour, comment vas-tu ?")
