@@ -8,7 +8,7 @@ class OllamaAI():
         self.AI = AiName    
 
     def CreatePayload(self, Message):
-        self.payload = {
+        return {
             "model": self.AI,  # Modèle utilisé
             "messages": [
                 {
@@ -21,7 +21,6 @@ class OllamaAI():
             "response_field": "response",
             "Stream": True
         }
-        return self.payload
 
     def SendQuestion(self, Message):
         response = requests.post(
@@ -32,7 +31,6 @@ class OllamaAI():
 
         if response.status_code == 200:
             data = response.json()
-            print(f"Réponse du modèle : {data.get('response', '')}")
             print(data)
             #print(response.json()['choices'][0]['message']['content'])
         else:
