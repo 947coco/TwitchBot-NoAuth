@@ -13,21 +13,27 @@ class OllamaAI():
             "messages": [
                 {
                     "role": "user",
-                    "content": "Raconte-moi une bonne blague"
+                    "content": Message
                 }
             ],
-            "temperature": 0.7,   # Niveau de créativité (entre 0 et 1)
-            "max_tokens": 500     # Limite du nombre de tokens dans la réponse
+            #"temperature": 0.7,   # Niveau de créativité (entre 0 et 1)
+            #"max_tokens": 500     # Limite du nombre de tokens dans la réponse
         }
+        return self.payload
 
     def SendQuestion(self, Message):
-        response = requests.post(self.url, headers=self.headers, json=self.CreatePayload(Message))
+        response = requests.post(
+            self.url, 
+            headers=self.headers, 
+            json=self.CreatePayload(Message)
+            )
 
         if response.status_code == 200:
             print(response.json())
-            print(response.json()['choices'][0]['message']['content'])
+            #print(response.json()['choices'][0]['message']['content'])
         else:
             print(f"Erreur : {response.status_code}")
+            print(f"Réponse : {response.text}")  # Affiche le corps de la réponse
 
 IA = OllamaAI("deepseek-r1:14b")
 IA.SendQuestion("Bonjour, comment vas-tu ?")
