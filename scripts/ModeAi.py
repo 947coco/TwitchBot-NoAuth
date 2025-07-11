@@ -1,13 +1,17 @@
 # -*- coding: utf-8 -*-
 import requests
-import time
+
 class OllamaAI():
     def __init__(self, AiName: str):
         self.AI = AiName 
-        self.PROMPT_DIRECTEUR = "Ta réponse doit contenir au maximum 160 caractères" \
-        "sans caractères spéciaux, juste avec des lettres et/ou des chiffres." \
-        "Le prompt suivant est un message twitch, le spectateur te posant cette question " \
-        "souhaite une réponse divertissante et distrayante. Voici sa question : "
+        self.PROMPT_DIRECTEUR = \
+        "Ta réponse doit être la plus courte possible, va droit au but. Répond en français" \
+        "Il t'es interdit d'utiliser des emojis et les caractères spéciaux, " \
+        "tu as seulement le droit aux lettres et aux chiffres. " \
+        "Le prompt est le message d'un chat twitch, tu dois fournir des " \
+        "réponse divertissante, distrayante, humoristique, second degré. " \
+        "Essaye d'utiliser le nom du viewer dans tes réponses."
+        "Voici le message twitch et le nom du viewer. "
 
     def SendQuestion(self, Message:str, NomViewer: str):        
         response = requests.post(
@@ -15,7 +19,7 @@ class OllamaAI():
             headers = {"Content-Type": "application/json"}, # Format de la requete
             json = { 
                     "model": self.AI,
-                    "prompt": self.PROMPT_DIRECTEUR + Message,
+                    "prompt" : self.PROMPT_DIRECTEUR + NomViewer + " a dit : " + Message,
                     "stream": False,
                     "session": NomViewer
                 } 
@@ -27,5 +31,5 @@ class OllamaAI():
         else:
             raise RuntimeError(f"La réponse n'as pas été reçu, code d'erreur :{response.status_code}")
 
-IA = OllamaAI("qwen2.5-coder:14b")
-IA.SendQuestion("Qui est arrivé en 1er, l'oeuf ou la poule ?", "Jambon_Beurre83")
+IA = OllamaAI("orca-mini:3b")
+IA.SendQuestion("Quel est la meilleur carte dans clash royal ?", "Jambon_Beurre83")
