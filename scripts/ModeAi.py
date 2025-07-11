@@ -1,33 +1,27 @@
+# -*- coding: utf-8 -*-
 import requests
 
-
 class OllamaAI():
-    def __init__(self, AiName):
-        self.url = "http://localhost:11434/api/generate"  # Adresse de l'API d'Ollama par défaut
-        self.headers = {"Content-Type": "application/json"}
-        self.AI = AiName    
+    def __init__(self, AiName: str):
+        self.AI = AiName  
 
-    def CreatePayload(self, Message):
-        return    {
-       "model": self.AI,
-       "prompt": Message,
-       "stream": False
-        }
-
-    def SendQuestion(self, Message):
+    def SendQuestion(self, Message:str, NomViewer: str):        
         response = requests.post(
-            self.url, 
-            headers=self.headers, 
-            json=self.CreatePayload(Message)
+            url = "http://localhost:11434/api/generate",  # Adresse de l'API d'Ollama par défaut 
+            headers = {"Content-Type": "application/json"}, # Format de la requete
+            json = { 
+                    "model": self.AI,
+                    "prompt": Message,
+                    "stream": False,
+                    "session": NomViewer
+                } 
             )
-
+                    
         if response.status_code == 200:
             data = response.json()
-            print(data)
-            #print(response.json()['choices'][0]['message']['content'])
+            print(data["response"])
         else:
-            print(f"Erreur : {response.status_code}")
-            print(f"Réponse : {response.text}")  # Affiche le corps de la réponse
+            raise RuntimeError(f"La réponse n'as pas été reçu, code d'erreur :{response.status_code}")
 
 IA = OllamaAI("qwen2.5-coder:14b")
-IA.SendQuestion("Explique moi la norme ASCII et pourquoi on a changer vers UTF-8")
+IA.SendQuestion("Explique moi la norme ASCII et pourquoi on a changer vers UTF-8", "Jambon_Beurre83")
