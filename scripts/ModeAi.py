@@ -1,5 +1,5 @@
 import requests
-import json
+
 
 class OllamaAI():
     def __init__(self, AiName):
@@ -8,18 +8,10 @@ class OllamaAI():
         self.AI = AiName    
 
     def CreatePayload(self, Message):
-        return {
-            "model": self.AI,  # Modèle utilisé
-            "messages": [
-                {
-                    "role": "user",
-                    "content": Message
-                }
-            ],
-            "temperature": 0.7,   # Niveau de créativité (entre 0 et 1)
-            "max_tokens": 500,     # Limite du nombre de tokens dans la réponse
-            "response_field": "response",
-            "Stream": True
+        return    {
+       "model": self.AI,
+       "prompt": Message,
+       "stream": False
         }
 
     def SendQuestion(self, Message):
@@ -37,5 +29,5 @@ class OllamaAI():
             print(f"Erreur : {response.status_code}")
             print(f"Réponse : {response.text}")  # Affiche le corps de la réponse
 
-IA = OllamaAI("deepseek-r1:14b")
-IA.SendQuestion("Bonjour, comment vas-tu ?")
+IA = OllamaAI("qwen2.5-coder:14b")
+IA.SendQuestion("Explique moi la norme ASCII et pourquoi on a changer vers UTF-8")

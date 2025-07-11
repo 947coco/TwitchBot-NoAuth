@@ -1,7 +1,6 @@
 Si vous souaitez modifier une valeur, faite le entre les "" 
 
 PseudoTwitch = ""                               Entrez le nom exacte de votre chaine twitch
-Mode = "Oral"                                   Mode possibles : Oral, Ecrit, Ia (ollama requis)
 IaChoisi = "deepseek-r1:14b"                    Quelle Ia sera utilisée (Mode Ia uniquement)
 MotsBannis = ""                                 Mots qui ne seront pas prononcées, les séparer par des espaces
 DélaisVérification = "3"                        Intervalle des messages lus (si il y a trop de messages à la fois) 
