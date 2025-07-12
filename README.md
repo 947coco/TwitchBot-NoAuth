@@ -1,6 +1,7 @@
 # But du projet
 Avoir les messages twitch sous forme vocal sans devoir donner vos identifiants / token twitch   
-Par conséquent, le bot ne pourra pas répondre directement dans le tchat
+Par conséquent, le bot ne pourra pas répondre directement dans le tchat mais seulement par voix artificielle.   
+ 
 
 ## Setup
 Vous inscrivez le nom de votre chaine twitch dans  config.txt et vous cliquez sur INSTALLER.bat    
