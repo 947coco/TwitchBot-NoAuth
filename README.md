@@ -5,7 +5,7 @@ You will just need to indicate the name of the twitch channel you want the messa
  
 
 ## Setup
-Write the name of the twitch channel in the config.txt file and click on INSTALLER.bat
+Write the name of the twitch channel in the config.txt file and click on INSTALL.bat
 Other parameters are available in this file. 
 
 ### In the futur, i will :
