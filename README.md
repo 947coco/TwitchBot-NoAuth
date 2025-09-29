@@ -9,7 +9,7 @@ Write the name of the twitch channel in the config.txt file and click on INSTALL
 Other parameters are available in this file. 
 
 ### In the futur, i will :
-Make a mode that will allowed an ai from the Ollama service to anwser to the message when the flag /AI will be invoked
+Make a mode that will allowed an ai from the Ollama service to anwser to the message when the flag /AI will be invoked   
 Create commands to do smtg on your pc (like press a key or make a sound...)    
     
 ### Advancement
