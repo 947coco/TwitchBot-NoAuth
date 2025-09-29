@@ -1,21 +1,21 @@
-# But du projet
-Avoir les messages twitch sous forme vocal sans devoir donner vos identifiants / token twitch   
-Par conséquent, le bot ne pourra pas répondre directement dans le tchat mais seulement par voix artificielle.   
+# Purpose
+I didn't found a twitch bot that doesn't require twitch credential or twitch token. 
+So i created a bot that can read message from a twitch chat without the need of any credential.
+You will just need to indicate the name of the twitch channel you want the messages from.   
  
 
 ## Setup
-Vous inscrivez le nom de votre chaine twitch dans  config.txt et vous cliquez sur INSTALLER.bat    
-D'autres paramètres sont disponibles dans config.txt, tout y est expliqué 
+Write the name of the twitch channel in the config.txt file and click on INSTALLER.bat
+Other parameters are available in this file. 
 
-### La suite ?
-Je compte:  
-    - faire un mode qui permetterais à une IA d'ollama (donc bon PC requis) de répondre aux messages du tchat    
-    - créer des commandes du tchat pour réaliser certaines actions (typiquement une commande /IA pour le mode IA)    
+### In the futur, i will :
+Make a mode that will allowed an ai from the Ollama service to anwser to the message when the flag /AI will be invoked
+Create commands to do smtg on your pc (like press a key or make a sound...)    
     
-### Avancement
-- [x] Connection au tchat twitch
-- [x] Lire et enregistrer les données de config.txt
-- [x] Voix artificielle
-- [x] 1 seul fichier d'installation
-- [ ] Mode IA 
-- [ ] Commandes personnalisées
+### Advancement
+- [x] Connection to twitch tchat
+- [x] Read and store data in config.txt
+- [x] Artificial voice
+- [x] Only 1 installation file 
+- [ ] AI mode 
+- [ ] Custom commands
