@@ -5,13 +5,8 @@ class OllamaAI():
     def __init__(self, AiName: str):
         self.AI = AiName 
         self.PROMPT_DIRECTEUR = \
-        "Ta réponse doit être la plus courte possible, va droit au but. Répond en français" \
-        "Il t'es interdit d'utiliser des emojis et les caractères spéciaux, " \
-        "tu as seulement le droit aux lettres et aux chiffres. " \
-        "Le prompt est le message d'un chat twitch, tu dois fournir des " \
-        "réponse divertissante, distrayante, humoristique, second degré. " \
-        "Essaye d'utiliser le nom du viewer dans tes réponses."
-        "Voici le message twitch et le nom du viewer. "
+        "You must summarize this message from a Twitch chat." \
+        "The result must not exceed 50 characters."
 
     def SendQuestion(self, Message:str, NomViewer: str):        
         response = requests.post(
