@@ -5,6 +5,6 @@ class TTS:
     def __init__(self):
         self.robot = pyttsx3.init()
 
-    def Dit(self, message: str):
+    def Say(self, message: str):
         self.robot.say(message)
         self.robot.runAndWait()

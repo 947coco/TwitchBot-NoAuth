@@ -16,6 +16,6 @@ Create commands to do smtg on your pc (like press a key or make a sound...)
 - [x] Connection to twitch tchat
 - [x] Read and store data in config.txt
 - [x] Artificial voice
-- [x] Only 1 installation file 
-- [ ] AI mode 
+- [x] Only 1 installation file
+- [ ] Parse users messages 
 - [ ] Custom commands
