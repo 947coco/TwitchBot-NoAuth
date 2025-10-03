@@ -1,9 +1,8 @@
-Si vous souaitez modifier une valeur, faite le entre les "" 
+If you want to modify values, do it only between the quotes "" 
 
-PseudoTwitch = ""                               Entrez le nom exacte de votre chaine twitch
-IaChoisi = "deepseek-r1:14b"                    Quelle Ia sera utilisée (Mode Ia uniquement)
-MotsBannis = ""                                 Mots qui ne seront pas prononcées, les séparer par des espaces
-DélaisVérification = "3"                        Intervalle des messages lus (si il y a trop de messages à la fois) 
-FormatRéponse = "User a dit Message"            Quelle phrase va être prononcé, ne pas modifier "User" et "Message" (déplacement et duplication accepté)
-RaccourciToutArrêter = "ctrl+shift+f"           Lors de l'appuie de ce raccourci clavier, tout s'arrête 
-Nombre de charactères maximum = 150             Combien de charactères maximum pour nom viewer + message entier
+Twitch username = ""                            Enter the exact name of the twitch channel
+Ban words = ""                                  Words that won't be said (split with space caracters)
+Delay check = "3"                               Delay between messages to say (useful if too many message at a time) 
+Anwser format = "User said Message"             What sentence will be pronounced, do not modify "User" and "Message"
+Shortcut to stop everything = "ctrl+shift+k"    Name is explicit 
+Number of caracters max  = "150"                Number of caracters max in the Anwser format variable 
